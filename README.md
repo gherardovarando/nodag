@@ -13,7 +13,7 @@ minus log-likelihood minimization:
 argmin  -2log(det(A)) + trace( Sigma AA^t) + lambda ||A||_1 
 ```
 
-### Usage
+### use 
 
 The fortran subrutine `NODAG` can be easily used both from python and R 
 
