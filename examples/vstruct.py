@@ -21,14 +21,16 @@ for j in range(1, p):
     for i in range(1, n):
         X[i, j] = X[i, j] + X[i,:].dot(B[:,j])
 Sigma = np.corrcoef(X.T)
-Aest = nd.nodag(Sigma, lambd = 0.3)
+Aest, diff, value, itr = nd.nodag(Sigma, lambd = 0.5)
 
-print('True adjacency matrix')
-print(B != 0)
-
+print('terminated with function value {0} (diff {1})  after {2} iterations'.format(value, diff, itr)) 
 print('Estimated A matrix')
 print(Aest)
 
 print('Estimated adjacency matrix')
 
 print( Aest - np.diag(Aest.diagonal()) != 0) 
+
+print('True adjacency matrix')
+print(B != 0)
+
