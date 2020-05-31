@@ -11,9 +11,9 @@ cf2py intent(in)  n
 cf2py intent(in)  sigma
 cf2py intent(out) a 
 cf2py double precision intent(in)  lambd
-cf2py double precision optional intent(in)  :: eps = 0.0001
-cf2py double precision optional intent(in)  :: alpha = 0.5
-cf2py integer optional intent(in)  :: maxitr = 100 
+cf2py double precision intent(in,out)  :: eps = 0.0001
+cf2py double precision intent(in,out)  :: alpha = 0.5
+cf2py integer intent(in,out)  :: maxitr = 100 
 ccccc
 c     on entry
 c        N      integer
