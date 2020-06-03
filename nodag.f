@@ -65,7 +65,7 @@ c             and G = ||A||_1
          F = F -  2 * LOG(ABS(TMP(J,J)))  
          DO 25 I=1,N
          F = F + A(I,J)*D(I,J)
-         IF (I .NE. J) G = G + LAMBD * ABS(A(I,J))
+         G = G + LAMBD * ABS(A(I,J))
   25     CONTINUE
   30  CONTINUE
 c     main loop here, increase iteration counter
@@ -101,11 +101,9 @@ c     gradient step
 c     soft thresholding
       DO 130 J =1,N
          DO 120 I=1,N
-            IF (I .NE. J) THEN
-                A(I,J) = SIGN(ONE,A(I,J))*(ABS(A(I,J))-STEP*LAMBD) 
-                IF (ABS(A(I,J)) .LE. STEP*LAMBD) THEN
-                         A(I,J) = 0
-                ENDIF
+            A(I,J) = SIGN(ONE,A(I,J))*(ABS(A(I,J))-STEP*LAMBD) 
+            IF (ABS(A(I,J)) .LE. STEP*LAMBD) THEN
+               A(I,J) = 0
             ENDIF
             TMP(I,J) = A(I,J)
  120     CONTINUE
@@ -130,7 +128,7 @@ c             and G = ||A||_1
             DIFF = DIFF + ((A(I,J) - AOLD(I,J))**2)/(2*STEP) + 
      *             (A(I,J) - AOLD(I,J)) * GRD(I,J)  
             FNW = FNW + A(I,J)*D(I,J)
-            IF (I .NE. J) GNW = GNW + LAMBD * ABS(A(I,J))
+            GNW = GNW + LAMBD * ABS(A(I,J))
   140    CONTINUE
   150  CONTINUE
 c     line search condition  
