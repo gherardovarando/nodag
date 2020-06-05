@@ -4,7 +4,9 @@
 
 This repository contains fortran implementation of a 
 proximal gradient method to estimate the structure of 
-a Bayesian network without imposing the acyclicity constraint. 
+a strucural equation model (SEM)
+ without imposing the acyclicity constraint. 
+See the preprint on [arXiv:2006.03005](https://arxiv.org/abs/2006.03005).
 
 The subrutine `NODAG` solve the following l1-penalized 
 minus log-likelihood minimization:
