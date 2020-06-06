@@ -21,7 +21,7 @@ for j in range(1, p):
     for i in range(1, n):
         X[i, j] = X[i, j] + X[i,:].dot(B[:,j])
 Sigma = np.corrcoef(X.T)
-Aest, diff, value, itr = nd.nodag(Sigma, lambd = 0.5)
+Aest, diff, value, itr = nd.nodag(Sigma, lambd = 0.3)
 
 print('terminated with function value {0} (diff {1})  after {2} iterations'.format(value, diff, itr)) 
 print('Estimated A matrix')

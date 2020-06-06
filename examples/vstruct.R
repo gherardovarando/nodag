@@ -24,7 +24,8 @@ for (j in 1:p){
 	}
 }
 
-lambda <- 0.2
+### penalization coefficient
+lambda <- 0.3
 out <- .Fortran("NODAG", as.integer(p), as.double(cor(X)),
                 as.double(diag(p)), as.double(lambda), 
                 as.double(1e-5), as.double(0.5), 
