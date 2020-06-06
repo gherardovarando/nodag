@@ -4,11 +4,11 @@
 
 This repository contains fortran implementation of a 
 proximal gradient method to estimate the structure of 
-a strucural equation model (SEM)
+a structural equation model (SEM)
  without imposing the acyclicity constraint. 
 See the preprint on [arXiv:2006.03005](https://arxiv.org/abs/2006.03005).
 
-The subrutine `NODAG` solve the following l1-penalized 
+The subroutine `NODAG` solves the following l1-penalized 
 minus log-likelihood minimization:
 
 ```
@@ -23,7 +23,7 @@ The fortran subrutine `NODAG` can be easily used both from python and R
 * R: compile `nodag.f` with `R CMD SHLIB nodag.f -llapack -lblas`
 
 Check the provided examples to see how to load and call the subroutine.  
- 
 
+### versions 
 
-
+* 0.0.1 June 6, 2020 
