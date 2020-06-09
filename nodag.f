@@ -5,8 +5,8 @@ c
 c     Find a sparse parametrization of the inverse covariance
 c     matrix as  A A**t using a proximal gradient algorithm 
 c     for the problem
-c             minimize   -LOGLIK(AA**t | SIGMA) + LAMBD * ||A||_1 
-c             A invertible
+c      minimize   -2log(det(A)) + trace(A^t Sigma A) + LAMBD * ||A||_1 
+c      A invertible
       IMPLICIT NONE
 c     integer variables 
       INTEGER N,MAXITR
