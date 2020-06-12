@@ -27,5 +27,5 @@ Check the provided examples to see how to load and call the subroutine.
 
 ### versions 
 
-* 0.0.2 June 10, 2020 
+* 0.0.2 June 12, 2020 
 * 0.0.1 June 6, 2020 
