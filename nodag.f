@@ -1,5 +1,5 @@
       SUBROUTINE NODAG(N, SIGMA, A, LAMBD, EPS, ALPHA, MAXITR)
-c     NODAG routine (version 0.0.2)  
+c     NODAG routine (version 0.0.3)  
 c     gherardo varando (2020) <gherardo.varando[at]gmail.com>
 c
 c     Find a sparse parametrization of the inverse covariance
@@ -48,7 +48,7 @@ c     intrinsic functions
       INTRINSIC ABS, LOG, SIGN
 c     internal variables
       INTEGER I,J,ITR, IPIV(N),INFO
-      DOUBLE PRECISION F,FNW,TMP(N,N),GRD(N,N), D(N,N), WORK(2*N),
+      DOUBLE PRECISION F,FNW,TMP(N,N),GRD(N,N), D(N,N),
      *                 ONE, ZERO, STEP, G, GNW, AOLD(N,N), DIFF
       PARAMETER ( ONE = 1.0E+0 )
       PARAMETER ( ZERO = 0.0E+0 )
@@ -74,7 +74,7 @@ c     main loop here, increase iteration counter
  500  CONTINUE      
       ITR = ITR + 1
 c     compute TMP = TMP**-1
-      CALL DGETRI(N, TMP, N, IPIV, WORK, 2*N, INFO)
+      CALL DGETRI(N, TMP, N, IPIV, AOLD, N**2, INFO)
 c     compute GRD = 2*(D - TMP**t)
 c     and copy A before starting line search 
       DO 40 J=1,N
